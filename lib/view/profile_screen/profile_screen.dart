@@ -1,6 +1,7 @@
 // import 'dart:nativewrappers/_internal/vm/lib/ffi_native_type_patch.dart';
 
 import 'package:project_management/consts/const.dart';
+import 'package:project_management/view/profile_screen/edit_profile.dart';
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -30,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
                crossAxisAlignment: CrossAxisAlignment.center,
                children: [
                  15.widthBox,
-                 Image.asset(profile,height: context.screenHeight*0.1,width: context.screenHeight*0.1,fit: BoxFit.cover,).box.roundedFull.shadowSm.clip(Clip.antiAlias).make(),
+                 Image.asset(profileimg,height: context.screenHeight*0.1,width: context.screenHeight*0.1,fit: BoxFit.cover,).box.roundedFull.shadowSm.clip(Clip.antiAlias).make(),
                 15.widthBox,
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -39,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
 
                     user.text.color(Purple).size(24).fontFamily(bold).make(),
 
-                    editProfile.text.size(18).underline.make().onTap((){}),
+                    editProfile.text.size(18).underline.make().onTap((){Get.to(()=>EditProfile());}),
                   ],
                 )
                ],
@@ -53,8 +54,8 @@ class ProfileScreen extends StatelessWidget {
                title: profileSettingList[index].text.fontFamily(semibold).make(),
                subtitle: profileSettingHintList[index].text.fontFamily(regular).make(),
                leading: Icon(profileSettingIconList[index],size: 40,color: Purple,),
-               trailing: Icon(Icons.navigate_next_outlined,size: 40,color: Purple,),
-             ).box.white.height(context.screenHeight*0.08).make().onTap((){})
+               trailing: Icon(Icons.navigate_next_outlined,size: 40,color: Purple,).onTap((){}),
+             ).box.white.margin(EdgeInsets.all(5)).roundedSM.border(color: Purple,width: 1.1,style: BorderStyle.solid).height(context.screenHeight*0.08).make().onTap((){})
              ).toList(),
            )
 

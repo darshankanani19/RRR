@@ -12,4 +12,4 @@ const t1="assets/photos/tifin1.png";
 const t2="assets/photos/tifin2.png";
 const t3="assets/photos/tifin3.png";
 const t4="assets/photos/tifin4.png";
-const profile ="assets/photos/profile.jpg";
+const profileimg ="assets/photos/profile.jpg";

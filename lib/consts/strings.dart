@@ -40,7 +40,7 @@ const dessert= "dessert";
 
 
 // profile details
-
+const profile ="Profile";
 const user = "darshan kanani";
 const editProfile = "Edit Profile";
 const privacySetting = "Privacy & Settings";
@@ -64,3 +64,20 @@ const logoutHint ="further secure accounts for safety";
 
 
 const account ="My Account";
+
+//edit profile screen
+
+const personal ="Personal";
+const firstName="darshan";
+const secondName="kanani";
+const mobileNumber="7016398824";
+const male="Male";
+const female="Female";
+const birthDate="19/12/2004";
+const mailId="darshankj129@gmail.com";
+
+const changePass ="Change Password";
+const oldPass="Old Password";
+const newPass="New Password";
+
+const updateProfile="Update Profile";
