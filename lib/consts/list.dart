@@ -1,0 +1,14 @@
+import 'package:project_management/consts/const.dart';
+const offersList =[o_1,o_2];
+const iconList =[vegFoodIcon,nonVegFoodIcon,fastFoodIcon,dessertIcon];
+const titleList =[veg,nonVeg,fastFood,dessert];
+const tiffinImgList =[t1,t2,t3,t4];
+const tiffinTitleList =["Tiffin 1","Tiffin 2","Tiffin 3","Tiffin 4"];
+const tiffinDescriptionList =["Details of Tiffin 1 items ","Details of Tiffin 2 items ","Details of Tiffin 3 items ","Details of Tiffin 4 items "];
+const tiffinPriceList =["₹99","₹250","₹400","₹300"];
+const restaurantList =["Rudra Garden Restaurant","Punjabi Point Restaurant","Rocks N Logs Restaurant","Sankalp Restaurant"];
+const restaurantDetailsList =["description about Related restaurant in details","description about Related restaurant in details","description about Related restaurant in details","description about Related restaurant in details"];
+const restaurantDistanceList =["3km away","2km away","5km away","1km away"];
+const profileSettingList =[privacySetting,orderHistory,paymentRefund,manageAddress,subscription,favourites,rewardPoints,helpSupport,logout];
+const profileSettingHintList =[privacySettingHint,orderHistoryHint,paymentRefundHint,manageAddressHint,subscriptionHint,favouritesHint,rewardPointsHint,helpSupportHint,logoutHint];
+const profileSettingIconList =[Icons.settings_outlined,Icons.history_edu_outlined,Icons.payment_outlined,Icons.location_on_outlined,Icons.subscriptions_outlined,Icons.favorite_outline,Icons.star_outline,Icons.help_outline,Icons.logout_outlined];
