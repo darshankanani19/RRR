@@ -1,5 +1,7 @@
-import 'package:project_management/comman_widget/customTextField.dart';
+import 'package:project_management/comman_widget/ourButton.dart';
+import 'package:project_management/comman_widget/simpleProfileField.dart';
 import 'package:project_management/consts/const.dart';
+
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
 
@@ -12,30 +14,71 @@ class _EditProfileState extends State<EditProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: profile.text.fontFamily(bold).make(),
-      ),
-      body: Column(
-crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // profile photo name
-          SizedBox(
-            width: context.screenWidth,
-          height: context.screenHeight*0.2,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(profileimg,height: context.screenHeight*0.12,fit: BoxFit.cover,width: context.screenHeight*0.12,).box.shadowSm.roundedFull.make(),
-              10.heightBox,
-              user.text.fontFamily(bold).size(24).make(),
-            ],
-          ),
-        )  ,
-          15.heightBox,
-          personal.text.fontFamily(bold).color(Purple).size(20).align(TextAlign.start).make().box.margin(EdgeInsets.symmetric(horizontal: 10)).make(),
-          customTextfiled(width: context.screenWidth*0.85,height: 100,isPass: false,textColor: Colors.black,hint: firstName).box.margin(EdgeInsets.all(8)).roundedSM.clip(Clip.antiAlias).border(color: Purple,style: BorderStyle.solid,width: 1.1).make(),
+        title: "Profile".text.fontFamily(bold).make(),
 
-        ],
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.black,
+      ),
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // Profile picture and name
+            20.heightBox,
+            Image.asset(
+              profileimg,
+              height: context.screenHeight * 0.13,
+              width: context.screenHeight * 0.13,
+              fit: BoxFit.cover,
+            ).box.roundedFull.clip(Clip.antiAlias).make(),
+            10.heightBox,
+            user.text.fontFamily(bold).size(20).make(),
+
+            30.heightBox,
+
+            // Personal section title
+            Align(
+              alignment: Alignment.centerLeft,
+              child: "Personal"
+                  .text
+                  .fontFamily(bold)
+                  .color(Colors.black)
+                  .size(18)
+                  .make()
+                  .marginOnly(left: 20),
+            ),
+
+            10.heightBox,
+
+            // Fields
+            simpleProfileField(value: firstName).marginOnly(bottom: 10,left: 15,right: 15),
+            simpleProfileField(value: secondName).marginOnly(bottom: 10,left: 15,right: 15),
+            simpleProfileField(value: mobileNumber).marginOnly(bottom: 10,left: 15,right: 15),
+            simpleProfileField(value: male).marginOnly(bottom: 10,left: 15,right: 15),
+            simpleProfileField(value: birthDate).marginOnly(bottom: 10,left: 15,right: 15),
+            simpleProfileField(value: mailId).marginOnly(bottom: 10,left: 15,right: 15),
+
+            // Change Password text
+            Align(
+              alignment: Alignment.centerLeft,
+              child: "Change Password"
+                  .text
+                  .fontFamily(bold)
+                  .color(Colors.black)
+                  .size(18)
+                  .make()
+                  .marginOnly(left: 20),
+            ),
+15.heightBox,
+            simpleProfileField(value: oldPass).marginOnly(bottom: 10,left: 15,right: 15),
+            simpleProfileField(value: newPass).marginOnly(bottom: 10,left: 15,right: 15),
+
+            ourButton(text: updateProfile,color: Purple,textColor: cream,textSize: 16,onPress: (){}).box.width(context.width*0.5).height(80).padding(EdgeInsets.all(10)).roundedSM.make(),
+            40.heightBox,
+          ],
+        ),
       ),
     );
   }
