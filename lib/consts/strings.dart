@@ -81,3 +81,22 @@ const oldPass="Old Password";
 const newPass="New Password";
 
 const updateProfile="Update Profile";
+
+
+//cart screen strings
+
+const cartString1="Unfortunately, Your Cart is Empty";
+const cartString2="Please add something in your cart";
+const continueOrdering="Continue Ordering";
+const cart ="My Cart";
+
+//setting pages
+const contactSupport ="Contact Support";
+
+//restaurant screen
+const  orderNow ="Order Now";
+const subscribe ="Subscribe";
+const breakfast ="Breakfast";
+const add ="Add";
+const dinner="Dinner";
+const lunch = "Lunch";

@@ -55,10 +55,12 @@ class ProfileScreen extends StatelessWidget {
                subtitle: profileSettingHintList[index].text.fontFamily(regular).make(),
                leading: Icon(profileSettingIconList[index],size: 40,color: Purple,),
                trailing: Icon(Icons.navigate_next_outlined,size: 40,color: Purple,).onTap((){}),
-             ).box.white.margin(EdgeInsets.all(5)).roundedSM.border(color: Purple,width: 1.1,style: BorderStyle.solid).height(context.screenHeight*0.08).make().onTap((){})
+             ).box.white.margin(EdgeInsets.all(5)).roundedSM.border(color: Purple,width: 1.1,style: BorderStyle.solid).height(context.screenHeight*0.08).make().onTap((){
+               Get.to(()=>redirectPage[index]);
+             })
              ).toList(),
-           )
-
+           ),
+           80.heightBox
          ],
         ).box.color(lightCream).width(context.screenWidth).make(),
       ),

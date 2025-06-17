@@ -1,5 +1,9 @@
+import 'dart:ui';
+
 import 'package:project_management/consts/const.dart';
+import 'package:project_management/view/notification/notification_screen.dart';
 import '../../comman_widget/iconButton.dart';
+import '../restaurant_screen/restaurant_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +14,138 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String currentLocation = "Location";
+  Map<String, bool> categoryFilters = {
+    'Veg': false,
+    'Non-Veg': false,
+  };
+
+  Map<String, bool> cuisineFilters = {
+    'North Indian': false,
+    'Mexican': false,
+    'Bengali': false,
+    'South Indian': false,
+  };
+
+  Map<String, bool> sortByFilters = {
+    'Low Cost First': false,
+    'High Cost First': false,
+    'Near Me': false,
+  };
+
+  void _showFilterBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) {
+        return BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: cream,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(25),
+                topRight: Radius.circular(25),
+              ),
+            ),
+            child: StatefulBuilder(
+              builder: (context, setModalState) {
+                void resetFilters() {
+                  setModalState(() {
+                    categoryFilters.updateAll((key, value) => false);
+                    cuisineFilters.updateAll((key, value) => false);
+                    sortByFilters.updateAll((key, value) => false);
+                  });
+                }
+
+                return SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      10.heightBox,
+                      'Filter Options'.text.size(18).fontFamily(bold).color(Purple).make(),
+
+                      15.heightBox,
+                      'Category'.text.size(16).fontFamily(semibold).make(),
+                      ...categoryFilters.keys.map((key) => CheckboxListTile(
+                        title: Text(key),
+                        activeColor: Purple,
+                        value: categoryFilters[key],
+                        onChanged: (val) {
+                          setModalState(() {
+                            categoryFilters[key] = val!;
+                          });
+                        },
+                      )),
+
+                      10.heightBox,
+                      'Cuisine'.text.size(16).fontFamily(semibold).make(),
+                      ...cuisineFilters.keys.map((key) => CheckboxListTile(
+                        title: Text(key),
+                        activeColor: Purple,
+                        value: cuisineFilters[key],
+                        onChanged: (val) {
+                          setModalState(() {
+                            cuisineFilters[key] = val!;
+                          });
+                        },
+                      )),
+
+                      10.heightBox,
+                      'Sort By'.text.size(16).fontFamily(semibold).make(),
+                      ...sortByFilters.keys.map((key) => CheckboxListTile(
+                        title: Text(key),
+                        activeColor: Purple,
+                        value: sortByFilters[key],
+                        onChanged: (val) {
+                          setModalState(() {
+                            sortByFilters[key] = val!;
+                          });
+                        },
+                      )),
+
+                      20.heightBox,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: lightPurple,
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                            ),
+                            onPressed: resetFilters,
+                            child: 'Reset'.text.white.make(),
+                          ),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Purple,
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                              setState(() {}); // triggers full screen rebuild with updated filters
+                            },
+                            child: 'Apply'.text.white.make(),
+                          ),
+                        ],
+                      ),
+                      10.heightBox,
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  List<String> selectedCategories = [];
+  List<String> selectedCuisines = [];
+  String selectedSort = "";
 
   void _showLocationDialog() {
     String tempLocation = currentLocation;
@@ -57,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           const Icon(Icons.notifications_active_outlined)
               .marginSymmetric(horizontal: 10)
-              .onTap(() {}),
+              .onTap(() {Get.to(()=>NotificationScreen());}),
         ],
       ),
       body: Padding(
@@ -239,13 +375,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 20,
                     height: 20,
                     child: Icon(Icons.read_more_outlined, size: 30, color: Purple),
-                  ).marginSymmetric(horizontal: 15).onTap(() {}),
+                  ).marginSymmetric(horizontal: 15).onTap(_showFilterBottomSheet),
                 ],
               ),
               15.heightBox,
 
                Column(
-                children: List.generate(restaurantDetailsList.length, (index) {
+                children: List.generate(restaurantList.length, (index) {
+                  final restaurant = restaurantList[index];
                   return Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                     width: screenWidth * 0.9,
@@ -261,6 +398,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     child: Column(
+
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ClipRRect(
@@ -283,8 +421,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               Expanded(
                                 child: Row(
                                   children: [
-                                    restaurantList[index]
-                                        .text
+                                    restaurant['title']
+                                        !.text
                                         .fontFamily(semibold)
                                         .size(16)
                                         .color(Purple)
@@ -294,8 +432,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: Purple,
                                       size: 20,
                                     ).marginOnly(left: 5, right: 2),
-                                    restaurantDistanceList[index]
-                                        .text
+                                    restaurant['distance']
+                                        !.text
                                         .fontFamily(regular)
                                         .size(12)
                                         .color(lightPurple)
@@ -306,7 +444,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               8.widthBox,
                               Row(
                                 children: [
-                                  "4.2".text.color(lightCream).fontFamily(semibold).align(TextAlign.center).make(),
+                                  restaurant['rating']!.text.color(lightCream).fontFamily(semibold).align(TextAlign.center).make(),
                                   Icon(Icons.star, color: Colors.yellow, size: 18),
                                 ],
                               ).box.color(Purple).roundedSM.p8.make(),
@@ -317,8 +455,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         5.heightBox,
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: restaurantDetailsList[index]
-                              .text
+                          child: restaurant['description']
+                              !.text
                               .fontFamily(regular)
                               .size(14)
                               .color(Colors.black45)
@@ -351,7 +489,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         )
                       ],
                     ),
-                  ).onTap(() {});
+                  ).onTap(() {
+                    Get.to(()=>RestaurantDetailScreen(index: index,name: restaurantList[index]['title'].toString(),));
+                  });
                 }),
               ),
 

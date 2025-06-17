@@ -6,11 +6,21 @@ class Assets {
   static const String fontsSansBold = 'assets/fonts/sans_bold.ttf';
   static const String fontsSansRegular = 'assets/fonts/sans_regular.ttf';
   static const String fontsSansSemibold = 'assets/fonts/sans_semibold.ttf';
+  static const String iconsDessert = 'assets/icons/dessert.jpg';
+  static const String iconsFastFood = 'assets/icons/fast-food.jpg';
+  static const String iconsNonVegFood = 'assets/icons/non-veg-food.jpg';
+  static const String iconsVegFood = 'assets/icons/veg-food.jpg';
   static const String photosImg = 'assets/photos/img.png';
   static const String photosLogo = 'assets/photos/logo.jpg';
   static const String photosLogo2 = 'assets/photos/logo2.jpg';
   static const String photosO1 = 'assets/photos/o-1.jpg';
   static const String photosO2 = 'assets/photos/o-2.jpg';
+  static const String photosProfile = 'assets/photos/profile.jpg';
+  static const String photosTifin1 = 'assets/photos/tifin1.png';
+  static const String photosTifin2 = 'assets/photos/tifin2.png';
+  static const String photosTifin3 = 'assets/photos/tifin3.png';
+  static const String photosTifin4 = 'assets/photos/tifin4.png';
+  static const String videosEmptyCart = 'assets/videos/emptyCart.mp4';
   static const String videosLogo = 'assets/videos/logo.gif';
 
 }

@@ -13,3 +13,9 @@ const t2="assets/photos/tifin2.png";
 const t3="assets/photos/tifin3.png";
 const t4="assets/photos/tifin4.png";
 const profileimg ="assets/photos/profile.jpg";
+const emptyCartVideo ="assets/videos/emptyCart.mp4";
+
+//restaurant image
+const r1="assets/photos/r1.png";
+const r2="assets/photos/r2.png";
+const r3="assets/photos/r3.png";

@@ -1,10 +1,12 @@
 // import 'package:flutter/material.dart';
 import 'package:project_management/consts/const.dart';
+import 'package:project_management/view/cart_screen/cart_screen.dart';
 import 'package:project_management/view/home_screen/home_screen.dart';
 import 'package:project_management/view/profile_screen/profile_screen.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  final int currentValueIndex;
+  const Home({super.key,  this.currentValueIndex=1});
 
   @override
   State<Home> createState() => _HomeState();
@@ -12,15 +14,16 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int currentValueIndex = 1;
+  @override
+  void initState() {
+    super.initState();
+    currentValueIndex = widget.currentValueIndex;
+  }
 
   final List<Widget> _screens = [
-    // cart
-    Container(color: Colors.red),
-    // home
+    CartScreen(),
     HomeScreen(),
-    // profile
     ProfileScreen(),
-
   ];
 
   @override

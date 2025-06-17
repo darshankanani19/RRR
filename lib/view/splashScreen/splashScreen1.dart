@@ -50,17 +50,19 @@ class _SplashScreen1State extends State<SplashScreen1> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 70),
-            child: SizedBox(
-              height: context.screenWidth*0.8,
-              width: context.screenWidth*0.8,
-              child: Center(
-                child: _controller.value.isInitialized
-                    ? AspectRatio(
-                  aspectRatio: _controller.value.aspectRatio,
-                  child: VideoPlayer(_controller),
-                )
-                    : Container(), // Or splash image while loading
+            padding: const EdgeInsets.only(left: 30),
+            child: Center(
+              child: SizedBox(
+                height: context.screenHeight*0.5,
+                width: context.screenHeight*0.5,
+                child: Center(
+                  child: _controller.value.isInitialized
+                      ? AspectRatio(
+                    aspectRatio: _controller.value.aspectRatio,
+                    child: VideoPlayer(_controller),
+                  )
+                      : Container(), // Or splash image while loading
+                ),
               ),
             ),
           ),
