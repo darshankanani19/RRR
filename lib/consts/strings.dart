@@ -100,3 +100,26 @@ const breakfast ="Breakfast";
 const add ="Add";
 const dinner="Dinner";
 const lunch = "Lunch";
+
+//subscription page
+const createSubscription ="Create Subscription";
+const portionSize ="Portion Size";
+const lite="Lite";
+const standard ="Standard";
+const subscriptionPlan ="Subscription Plans";
+const daysMealPlan="7 Days Meal Plans";
+const monthlyMealPlan ="Monthly Meal Plans";
+const meal ="Meal";
+const total ="Total";
+const fullMeal="Full Meals";
+const repeatOn ="Repeat On";
+const mon="Mon";
+const tue ="Tue";
+const wed ="Wed";
+const  thu ="Thu";
+const fri="Fri";
+const sat ="Sat";
+const sun ="Sun";
+const startFrom="Start From";
+const calendar ="Calendar";
+const proceedToPay="Proceed to pay ";

@@ -1,17 +1,26 @@
 import 'package:project_management/comman_widget/ourButton.dart';
 import 'package:project_management/consts/const.dart';
 
-class RestaurantDetailScreen extends StatelessWidget {
+import '../subscription_screen/subscription_screen.dart';
+
+class RestaurantDetailScreen extends StatefulWidget {
   final String name ;
   final int index ;
   const RestaurantDetailScreen({super.key, required this.name,required this.index});
 
   @override
+  State<RestaurantDetailScreen> createState() => _RestaurantDetailScreenState();
+}
+
+class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
+
+  @override
   Widget build(BuildContext context) {
-    final restaurant = restaurantList[index];
+    final restaurant = restaurantList[widget.index];
+
     return Scaffold(
       appBar: AppBar(
-        title: name.text.fontFamily(bold).make(),
+        title: widget.name.text.fontFamily(bold).make(),
         backgroundColor: lightPurple,
         actions: [
           IconButton(onPressed: (){}, icon: const Icon(Icons.star,color: Colors.yellow,)),
@@ -59,12 +68,14 @@ class RestaurantDetailScreen extends StatelessWidget {
             ),
               20.heightBox,
 
-            //   order now and subscribe button 
+            //   order now and subscribe button
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                children: [
                  ourButton(text: orderNow,color: Purple,textColor: lightCream,textSize: 16,onPress: (){}).box.size(context.screenWidth*0.4, 50).leftRounded(value: 15  ).rightRounded(value: 0).make(),
-                 ourButton(text: subscribe,color: lightCream,textColor: Purple,textSize: 16,onPress: (){}).box.size(context.screenWidth*0.4, 50).rightRounded(value: 15).leftRounded(value: 0).make(),
+                 ourButton(text: subscribe,color: lightCream,textColor: Purple,textSize: 16,onPress: (){
+                   Get.to(()=>CreateSubscriptionScreen(restaurantIndex: widget.index,));
+                 }).box.size(context.screenWidth*0.4, 50).rightRounded(value: 15).leftRounded(value: 0).make(),
                ],
               ).box.width(context.screenWidth*0.9).make(),
               20.heightBox,
@@ -87,8 +98,10 @@ class RestaurantDetailScreen extends StatelessWidget {
                        "\$ ${tifin['Price']}".text.fontFamily(regular).color(Colors.blueGrey).size(16).make(),
                         Row(
                           children: [
-                            
-                            "-".text.size(16).make().paddingAll(3).onTap((){if(count>0){count--;}}),
+
+                            "-".text.size(16).make().paddingAll(3).onTap((){if(count>0){
+
+                              count--;}}),
                            2.widthBox,
                             add.text.fontFamily(semibold).color(Purple).size(16).make(),
                             2.widthBox,

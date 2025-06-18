@@ -208,3 +208,21 @@ List<NotificationItem> notificationList = [
     icon: Icons.subscriptions_outlined,
   ),
 ];
+const daysList =[mon,tue,wed,thu,fri,sat,sun];
+final regularTifin = [breakfast, lunch, dinner];
+List<bool> isChecked = [false, false, false];
+List<bool> isCheckedPortionSize = [ false, false];
+final subscriptionPlanList=[
+  {
+    "name":daysMealPlan,
+    "price":110,
+    "days":7,
+    "total":770
+  },
+  {
+    "name":monthlyMealPlan,
+    "price":100,
+    "days":30,
+    "total":2699
+  }
+];List<bool> isCheckedSubscriptionPlan = [ false, false];
