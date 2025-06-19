@@ -1,6 +1,8 @@
 const app = "R R R";
 const appFullName ="Room Roti Ride";
-
+const room ="Room";
+const roti ="Roti";
+const ride ="Ride";
 const version = "1.0.0";
 const owner ="darshan kanani";
 
@@ -123,3 +125,11 @@ const sun ="Sun";
 const startFrom="Start From";
 const calendar ="Calendar";
 const proceedToPay="Proceed to pay ";
+
+
+// room related strings
+const rentHouse ="Rent Room";
+const rent ="Rent";
+const share ="Share";
+const shareRoom ="Share Room";
+const buyHouse ="Buy House";

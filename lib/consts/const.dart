@@ -16,3 +16,5 @@ export '../view/setting_screens/helpSupport.dart';
 export '../view/setting_screens/manageAddress.dart';
 export '../view/setting_screens/rewardPoints.dart';
 export '../view/setting_screens/subscription.dart';
+
+export '../room_module/model/property_model.dart';

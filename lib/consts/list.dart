@@ -1,4 +1,287 @@
 import 'package:project_management/consts/const.dart';
+import 'package:project_management/room_module/home_screen_room/home_screen_room.dart';
+
+import '../view/cart_screen/cart_screen.dart';
+import '../view/home_screen/home_screen.dart';
+import '../view/profile_screen/profile_screen.dart';
+
+const appList = [room,roti,ride];
+const screensRoti = [
+  CartScreen(),
+  HomeScreen(),
+  ProfileScreen(),
+];
+const screensRoom = [
+  CartScreen(),
+  HomeScreenRoom(),
+  ProfileScreen(),
+];
+const screensRide = [
+  CartScreen(),
+  HomeScreen(),
+  ProfileScreen(),
+];
+const roombottumNavbar = const [
+  BottomNavigationBarItem(
+    icon: Icon(Icons.chat_outlined),
+    label: 'Chat',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.home_outlined),
+    label: 'Home',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.person_outline),
+    label: 'Profile',
+  ),
+];
+const rotibottumNavbar = const [
+  BottomNavigationBarItem(
+    icon: Icon(Icons.shopping_cart_outlined),
+    label: 'Cart',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.home_outlined),
+    label: 'Home',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.person_outline),
+    label: 'Profile',
+  ),
+];
+const ridebottumNavbar = const [
+  BottomNavigationBarItem(
+    icon: Icon(Icons.shopping_cart_outlined),
+    label: 'Cart',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.home_outlined),
+    label: 'Home',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.person_outline),
+    label: 'Profile',
+  ),
+];
+
+// room related list
+const adsRoomList = [ad1,ad2,ad3,ad4];
+const rentHouseList=[rent1,rent2,rent3,rent4];
+const shareHouseList=[share1,share2,share3,share4];
+final List<Property> allProperties = [
+  Property(
+    id: 'p1',
+    type: 'Rent',
+    imageUrl: rent1,
+    title: 'Modern Apartment',
+    description: 'Spacious 2BHK apartment in city center.',
+    price: '₹25,000/month',
+    location: 'Kaliyabid',
+  ),
+  Property(
+    id: 'p2',
+    type: 'Buy',
+    imageUrl: buy1,
+    title: 'Luxury Villa',
+    description: 'Beautiful 4BHK villa with garden and pool.',
+    price: '₹2.5 Crore',
+    location: 'Malnath',
+  ),
+  Property(
+    id: 'p3',
+    type: 'Share',
+    imageUrl:share1,
+    title: 'Shared Room (Girls)',
+    description: 'Furnished room available for rent, includes all utilities.',
+    price: '₹7,500/month (per person)',
+    location: 'Virani',
+  ),
+  Property(
+    id: 'p4',
+    type: 'Rent',
+    imageUrl: rent2,
+    title: 'Studio Flat',
+    description: 'Cozy studio flat ideal for bachelors.',
+    price: '₹12,000/month',
+    location: 'Tech Park',
+  ),
+  Property(
+    id: 'p5',
+    type: 'Buy',
+    imageUrl: buy2,
+    title: 'Commercial Office Space',
+    description: 'Prime location for your new business.',
+    price: '₹1.2 Crore',
+    location: 'Business District',
+  ),
+  Property(
+    id: 'p6',
+    type: 'Share',
+    imageUrl: share2,
+    title: 'PG for Boys',
+    description: 'Affordable PG with food, near colleges.',
+    price: '₹6,000/month',
+    location: 'Student Hub',
+  ),
+  Property(
+    id: 'p7',
+    type: 'Rent',
+    imageUrl: rent3,
+    title: 'Family Home',
+    description: '3BHK independent house with car parking.',
+    price: '₹35,000/month',
+    location: 'Quiet Suburb',
+  ),
+  Property(
+    id: 'p8',
+    type: 'Buy',
+    imageUrl: buy3,
+    title: 'Vacant Land',
+    description: 'Residential plot, ready for construction.',
+    price: '₹80 Lakh',
+    location: 'Developing Area',
+  ),
+  Property(
+    id: 'p9',
+    type: 'Share',
+    imageUrl: share3,
+    title: 'PG for Boys',
+    description: 'Affordable PG with food, near colleges.',
+    price: '₹6,000/month',
+    location: 'Student Hub',
+  ),
+  Property(
+    id: 'p10',
+    type: 'Rent',
+    imageUrl: rent4,
+    title: 'Family Home',
+    description: '3BHK independent house with car parking.',
+    price: '₹35,000/month',
+    location: 'Quiet Suburb',
+  ),
+  Property(
+    id: 'p11',
+    type: 'Buy',
+    imageUrl: buy4,
+    title: 'Vacant Land',
+    description: 'Residential plot, ready for construction.',
+    price: '₹80 Lakh',
+    location: 'Developing Area',
+  ),
+  Property(
+    id: 'p12',
+    type: 'Share',
+    imageUrl: share4,
+    title: 'PG for Boys',
+    description: 'Affordable PG with food, near colleges.',
+    price: '₹6,000/month',
+    location: 'Student Hub',
+  ),
+];
+final List<Property> nearbyRoomsList = [
+  Property(
+    id: 'n1',
+    type: 'Rent',
+    imageUrl: n1,
+    title: '1BHK near Takhteshwar',
+    description: 'Well-furnished flat near Takhteshwar Temple.',
+    price: '₹8,500/month',
+    location: 'Takhteshwar, Bhavnagar',
+  ),
+  Property(
+    id: 'n2',
+    type: 'Share',
+    imageUrl: n2,
+    title: 'PG in Sardarnagar',
+    description: 'Girls PG with AC and food facilities.',
+    price: '₹6,000/month',
+    location: 'Sardarnagar, Bhavnagar',
+  ),
+  Property(
+    id: 'n3',
+    type: 'Rent',
+    imageUrl: n3,
+    title: 'Studio Flat near Waghawadi',
+    description: 'Compact and cozy studio for students.',
+    price: '₹7,200/month',
+    location: 'Waghawadi Road, Bhavnagar',
+  ),
+  Property(
+    id: 'n4',
+    type: 'Share',
+    imageUrl: n4,
+    title: 'Shared Room near Hill Drive',
+    description: 'Peaceful area with all amenities included.',
+    price: '₹5,500/month',
+    location: 'Hill Drive, Bhavnagar',
+  ),
+  Property(
+    id: 'n5',
+    type: 'Rent',
+    imageUrl: n5,
+    title: 'Flat near Krishna Hospital',
+    description: 'Ideal for medical professionals & staff.',
+    price: '₹10,000/month',
+    location: 'Krishna Hospital, Bhavnagar',
+  ),
+  Property(
+    id: 'n6',
+    type: 'Share',
+    imageUrl: n6,
+    title: 'Boys PG in Ghogha Circle',
+    description: 'Spacious PG with fast Wi-Fi and meals.',
+    price: '₹5,800/month',
+    location: 'Ghogha Circle, Bhavnagar',
+  ),
+];
+
+final List<Property> bestPropertiesList = [
+  Property(
+    id: 'best1',
+    type: 'Rent',
+    imageUrl: best1,
+    title: 'Modern Apartment',
+    description: 'Spacious 2BHK apartment in city center.',
+    price: '₹25,000/month',
+    location: 'Kaliyabid',
+  ),
+  Property(
+    id: 'best2',
+    type: 'Buy',
+    imageUrl: best2,
+    title: 'Luxury Villa',
+    description: 'Beautiful 4BHK villa with garden and pool.',
+    price: '₹2.5 Crore',
+    location: 'Malnath',
+  ),
+  Property(
+    id: 'best3',
+    type: 'Share',
+    imageUrl:best3,
+    title: 'Shared Room (Girls)',
+    description: 'Furnished room available for rent, includes all utilities.',
+    price: '₹7,500/month (per person)',
+    location: 'Virani',
+  ),
+  Property(
+    id: 'best4',
+    type: 'Rent',
+    imageUrl: best4,
+    title: 'Studio Flat',
+    description: 'Cozy studio flat ideal for bachelors.',
+    price: '₹12,000/month',
+    location: 'Tech Park',
+  ),
+  Property(
+    id: 'best5',
+    type: 'Rent',
+    imageUrl: best5,
+    title: 'Golden City',
+    description: 'Cozy studio flat ideal for bachelors.',
+    price: '15,000/month',
+    location: 'Kaliyabid ',
+  ),
+];
 
 const offersList =[o_1,o_2];
 const iconList =[vegFoodIcon,nonVegFoodIcon,fastFoodIcon,dessertIcon];
@@ -225,4 +508,8 @@ final subscriptionPlanList=[
     "days":30,
     "total":2699
   }
-];List<bool> isCheckedSubscriptionPlan = [ false, false];
+];
+List<bool> isCheckedSubscriptionPlan = [ false, false];
+
+
+

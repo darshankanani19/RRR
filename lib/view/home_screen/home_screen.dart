@@ -25,7 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
     'Bengali': false,
     'South Indian': false,
   };
-
   Map<String, bool> sortByFilters = {
     'Low Cost First': false,
     'High Cost First': false,
@@ -147,55 +146,13 @@ class _HomeScreenState extends State<HomeScreen> {
   List<String> selectedCuisines = [];
   String selectedSort = "";
 
-  void _showLocationDialog() {
-    String tempLocation = currentLocation;
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text("Enter Location"),
-        content: TextField(
-          autofocus: true,
-          decoration: const InputDecoration(
-            hintText: "Type your location",
-            border: OutlineInputBorder(),
-          ),
-          onChanged: (value) {
-            tempLocation = value;
-          },
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text("Cancel"),
-          ),
-          TextButton(
-            onPressed: () {
-              setState(() {
-                currentLocation = tempLocation;
-              });
-              Navigator.of(context).pop();
-            },
-            child: const Text("Save"),
-          ),
-        ],
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: AppBar(
-        title: currentLocation.text.make().onTap(_showLocationDialog),
-        leading: const Icon(Icons.location_on_outlined),
-        actions: [
-          const Icon(Icons.notifications_active_outlined)
-              .marginSymmetric(horizontal: 10)
-              .onTap(() {Get.to(()=>NotificationScreen());}),
-        ],
-      ),
+
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(

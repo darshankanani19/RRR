@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsVideosEmptyCart = 'assets/videos/emptyCart.mp4';
   static const String assetsVideosLogo = 'assets/videos/logo.mp4';
   static const String fontsSansBold = 'assets/fonts/sans_bold.ttf';
   static const String fontsSansRegular = 'assets/fonts/sans_regular.ttf';
@@ -10,16 +11,49 @@ class Assets {
   static const String iconsFastFood = 'assets/icons/fast-food.jpg';
   static const String iconsNonVegFood = 'assets/icons/non-veg-food.jpg';
   static const String iconsVegFood = 'assets/icons/veg-food.jpg';
+  static const String photosDish1 = 'assets/photos/dish1.jpg';
+  static const String photosDish2 = 'assets/photos/dish2.jpg';
+  static const String photosDish3 = 'assets/photos/dish3.jpg';
+  static const String photosDish4 = 'assets/photos/dish4.jpg';
   static const String photosImg = 'assets/photos/img.png';
   static const String photosLogo = 'assets/photos/logo.jpg';
   static const String photosLogo2 = 'assets/photos/logo2.jpg';
   static const String photosO1 = 'assets/photos/o-1.jpg';
   static const String photosO2 = 'assets/photos/o-2.jpg';
   static const String photosProfile = 'assets/photos/profile.jpg';
+  static const String photosR1 = 'assets/photos/r1.png';
+  static const String photosR2 = 'assets/photos/r2.png';
+  static const String photosR3 = 'assets/photos/r3.png';
   static const String photosTifin1 = 'assets/photos/tifin1.png';
   static const String photosTifin2 = 'assets/photos/tifin2.png';
   static const String photosTifin3 = 'assets/photos/tifin3.png';
   static const String photosTifin4 = 'assets/photos/tifin4.png';
+  static const String roomAd1 = 'assets/photos/room/ad1.jpg';
+  static const String roomAd2 = 'assets/photos/room/ad2.jpg';
+  static const String roomAd3 = 'assets/photos/room/ad3.jpg';
+  static const String roomAd4 = 'assets/photos/room/ad4.jpg';
+  static const String roomBest1 = 'assets/photos/room/best1.jpg';
+  static const String roomBest2 = 'assets/photos/room/best2.jpg';
+  static const String roomBest3 = 'assets/photos/room/best3.jpg';
+  static const String roomBest4 = 'assets/photos/room/best4.jpg';
+  static const String roomBest5 = 'assets/photos/room/best5.jpg';
+  static const String roomBuy1 = 'assets/photos/room/buy1.jpg';
+  static const String roomBuy2 = 'assets/photos/room/buy2.jpg';
+  static const String roomBuy3 = 'assets/photos/room/buy3.jpg';
+  static const String roomBuy4 = 'assets/photos/room/buy4.jpg';
+  static const String roomN1 = 'assets/photos/room/n1.jpg';
+  static const String roomN2 = 'assets/photos/room/n2.jpg';
+  static const String roomN3 = 'assets/photos/room/n3.jpg';
+  static const String roomN4 = 'assets/photos/room/n4.jpg';
+  static const String roomR1 = 'assets/photos/room/r1.jpg';
+  static const String roomR2 = 'assets/photos/room/r2.jpg';
+  static const String roomR3 = 'assets/photos/room/r3.jpg';
+  static const String roomR4 = 'assets/photos/room/r4.jpg';
+  static const String roomS1 = 'assets/photos/room/s1.jpg';
+  static const String roomS2 = 'assets/photos/room/s2.jpg';
+  static const String roomS3 = 'assets/photos/room/s3.jpg';
+  static const String roomS4 = 'assets/photos/room/s4.jpg';
+  static const String videosAppUI = 'assets/videos/appUI.mp4';
   static const String videosEmptyCart = 'assets/videos/emptyCart.mp4';
   static const String videosLogo = 'assets/videos/logo.gif';
 
