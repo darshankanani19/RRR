@@ -16,5 +16,8 @@ export '../view/setting_screens/helpSupport.dart';
 export '../view/setting_screens/manageAddress.dart';
 export '../view/setting_screens/rewardPoints.dart';
 export '../view/setting_screens/subscription.dart';
+export 'package:project_management/ride_module/home_screen/homePage.dart';
 
 export '../room_module/model/property_model.dart';
+export 'package:project_management/room_module/chat_screen/chat_homeScreen.dart';
+export '../room_module/search_screen/search_screen.dart';

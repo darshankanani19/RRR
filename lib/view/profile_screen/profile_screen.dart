@@ -1,4 +1,3 @@
-// import 'dart:nativewrappers/_internal/vm/lib/ffi_native_type_patch.dart';
 
 import 'package:project_management/consts/const.dart';
 import 'package:project_management/view/profile_screen/edit_profile.dart';

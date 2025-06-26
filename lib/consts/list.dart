@@ -1,6 +1,7 @@
 import 'package:project_management/consts/const.dart';
 import 'package:project_management/room_module/home_screen_room/home_screen_room.dart';
 
+import '../room_module/model/chat_model.dart';
 import '../view/cart_screen/cart_screen.dart';
 import '../view/home_screen/home_screen.dart';
 import '../view/profile_screen/profile_screen.dart';
@@ -12,14 +13,15 @@ const screensRoti = [
   ProfileScreen(),
 ];
 const screensRoom = [
-  CartScreen(),
+  ChatHomeScreen(),
   HomeScreenRoom(),
+  SearchScreen(),
   ProfileScreen(),
 ];
-const screensRide = [
-  CartScreen(),
-  HomeScreen(),
-  ProfileScreen(),
+var screensRide = [
+  const CartScreen(),
+  HomeScreenRide(),
+  const ProfileScreen(),
 ];
 const roombottumNavbar = const [
   BottomNavigationBarItem(
@@ -29,6 +31,10 @@ const roombottumNavbar = const [
   BottomNavigationBarItem(
     icon: Icon(Icons.home_outlined),
     label: 'Home',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.search_off_outlined),
+    label: 'Search',
   ),
   BottomNavigationBarItem(
     icon: Icon(Icons.person_outline),
@@ -177,6 +183,105 @@ final List<Property> allProperties = [
     price: '₹6,000/month',
     location: 'Student Hub',
   ),
+  Property(
+    id: 'n1',
+    type: 'Rent',
+    imageUrl: n1,
+    title: '1BHK near Takhteshwar',
+    description: 'Well-furnished flat near Takhteshwar Temple.',
+    price: '₹8,500/month',
+    location: 'Takhteshwar, Bhavnagar',
+  ),
+  Property(
+    id: 'n2',
+    type: 'Share',
+    imageUrl: n2,
+    title: 'PG in Sardarnagar',
+    description: 'Girls PG with AC and food facilities.',
+    price: '₹6,000/month',
+    location: 'Sardarnagar, Bhavnagar',
+  ),
+  Property(
+    id: 'n3',
+    type: 'Rent',
+    imageUrl: n3,
+    title: 'Studio Flat near Waghawadi',
+    description: 'Compact and cozy studio for students.',
+    price: '₹7,200/month',
+    location: 'Waghawadi Road, Bhavnagar',
+  ),
+  Property(
+    id: 'n4',
+    type: 'Share',
+    imageUrl: n4,
+    title: 'Shared Room near Hill Drive',
+    description: 'Peaceful area with all amenities included.',
+    price: '₹5,500/month',
+    location: 'Hill Drive, Bhavnagar',
+  ),
+  Property(
+    id: 'n5',
+    type: 'Rent',
+    imageUrl: n5,
+    title: 'Flat near Krishna Hospital',
+    description: 'Ideal for medical professionals & staff.',
+    price: '₹10,000/month',
+    location: 'Krishna Hospital, Bhavnagar',
+  ),
+  Property(
+    id: 'n6',
+    type: 'Share',
+    imageUrl: n6,
+    title: 'Boys PG in Ghogha Circle',
+    description: 'Spacious PG with fast Wi-Fi and meals.',
+    price: '₹5,800/month',
+    location: 'Ghogha Circle, Bhavnagar',
+  ),
+  Property(
+    id: 'best1',
+    type: 'Rent',
+    imageUrl: best1,
+    title: 'Modern Apartment',
+    description: 'Spacious 2BHK apartment in city center.',
+    price: '₹25,000/month',
+    location: 'Kaliyabid',
+  ),
+  Property(
+    id: 'best2',
+    type: 'Buy',
+    imageUrl: best2,
+    title: 'Luxury Villa',
+    description: 'Beautiful 4BHK villa with garden and pool.',
+    price: '₹2.5 Crore',
+    location: 'Malnath',
+  ),
+  Property(
+    id: 'best3',
+    type: 'Share',
+    imageUrl:best3,
+    title: 'Shared Room (Girls)',
+    description: 'Furnished room available for rent, includes all utilities.',
+    price: '₹7,500/month (per person)',
+    location: 'Virani',
+  ),
+  Property(
+    id: 'best4',
+    type: 'Rent',
+    imageUrl: best4,
+    title: 'Studio Flat',
+    description: 'Cozy studio flat ideal for bachelors.',
+    price: '₹12,000/month',
+    location: 'Tech Park',
+  ),
+  Property(
+    id: 'best5',
+    type: 'Rent',
+    imageUrl: best5,
+    title: 'Golden City',
+    description: 'Cozy studio flat ideal for bachelors.',
+    price: '15,000/month',
+    location: 'Kaliyabid ',
+  ),
 ];
 final List<Property> nearbyRoomsList = [
   Property(
@@ -234,7 +339,6 @@ final List<Property> nearbyRoomsList = [
     location: 'Ghogha Circle, Bhavnagar',
   ),
 ];
-
 final List<Property> bestPropertiesList = [
   Property(
     id: 'best1',
@@ -282,6 +386,99 @@ final List<Property> bestPropertiesList = [
     location: 'Kaliyabid ',
   ),
 ];
+final List<Chat> userChats = [
+  Chat(
+    roomId: 'room_p1',
+    userId: 'user_darshan',
+    userName: 'Darshan Kanani',
+    dealerId: 'dealer_1',
+    dealerName: 'Mr. Patel',
+    lastMessage: 'Hi, is this property still available?',
+    timestamp: '2025-06-25T10:00:00Z',
+    unreadCount: 1,
+    messages: [
+      'Darshan: Hi, is this property still available?',
+    ],
+    property: allProperties.firstWhere((p) => p.id == 'p1'),
+  ),
+  Chat(
+    roomId: 'room_p2',
+    userId: 'user_darshan',
+    userName: 'Darshan Kanani',
+    dealerId: 'dealer_2',
+    dealerName: 'Mrs. Shah',
+    lastMessage: 'Yes, it is available.',
+    timestamp: '2025-06-25T09:50:00Z',
+    unreadCount: 0,
+    messages: [
+      'Darshan: Interested in this villa.',
+      'Dealer: Yes, it is available.',
+    ],
+    property: allProperties.firstWhere((p) => p.id == 'p2'),
+  ),
+  Chat(
+    roomId: 'room_p3',
+    userId: 'user_darshan',
+    userName: 'Darshan Kanani',
+    dealerId: 'dealer_3',
+    dealerName: 'Ms. Mehta',
+    lastMessage: 'Shared rooms are still vacant.',
+    timestamp: '2025-06-25T08:30:00Z',
+    unreadCount: 0,
+    messages: [
+      'Darshan: Looking for PG for girls in Virani.',
+      'Dealer: Shared rooms are still vacant.',
+    ],
+    property: allProperties.firstWhere((p) => p.id == 'p3'),
+  ),
+  Chat(
+    roomId: 'room_p4',
+    userId: 'user_darshan',
+    userName: 'Darshan Kanani',
+    dealerId: 'dealer_4',
+    dealerName: 'Mr. Desai',
+    lastMessage: 'Great bachelor option!',
+    timestamp: '2025-06-25T08:00:00Z',
+    unreadCount: 2,
+    messages: [
+      'Darshan: Studio flat looks good.',
+      'Dealer: Great bachelor option!',
+    ],
+    property: allProperties.firstWhere((p) => p.id == 'p4'),
+  ),
+  Chat(
+    roomId: 'room_p5',
+    userId: 'user_darshan',
+    userName: 'Darshan Kanani',
+    dealerId: 'dealer_5',
+    dealerName: 'Mr. Bhatt',
+    lastMessage: 'We can schedule a visit.',
+    timestamp: '2025-06-24T18:15:00Z',
+    unreadCount: 0,
+    messages: [
+      'Darshan: Interested in commercial space.',
+      'Dealer: We can schedule a visit.',
+    ],
+    property: allProperties.firstWhere((p) => p.id == 'p5'),
+  ),
+  Chat(
+    roomId: 'room_p6',
+    userId: 'user_darshan',
+    userName: 'Darshan Kanani',
+    dealerId: 'dealer_6',
+    dealerName: 'Mr. Yadav',
+    lastMessage: 'Includes food and Wi-Fi.',
+    timestamp: '2025-06-24T17:00:00Z',
+    unreadCount: 0,
+    messages: [
+      'Darshan: Tell me more about PG.',
+      'Dealer: Includes food and Wi-Fi.',
+    ],
+    property: allProperties.firstWhere((p) => p.id == 'p6'),
+  ),
+];
+ List<Property> favouriteProperties = [];
+
 
 const offersList =[o_1,o_2];
 const iconList =[vegFoodIcon,nonVegFoodIcon,fastFoodIcon,dessertIcon];

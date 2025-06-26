@@ -1,4 +1,5 @@
 import 'package:project_management/consts/const.dart';
+import 'package:project_management/view/home_screen/Home.dart';
 import 'package:project_management/view/splashScreen/splashScreen1.dart';
 void main(){
   runApp(splashScreen());

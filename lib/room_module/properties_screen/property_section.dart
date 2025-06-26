@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:project_management/consts/const.dart';
 import '../../comman_widget/property_card.dart';
-import '../model/property_model.dart';
 
 class PropertySection extends StatelessWidget {
   final String title;
@@ -29,8 +27,8 @@ class PropertySection extends StatelessWidget {
             title.text
                 .fontFamily(semibold)
                 .size(18)
-                .color(Purple)
-                .shadowColor(lightPurple)
+                .color(orange)
+                .shadowColor(lightOrange)
                 .make(),
             const Spacer(),
             if (onArrowTap != null)

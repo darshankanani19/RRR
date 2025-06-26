@@ -1,7 +1,6 @@
 
 import 'package:project_management/consts/const.dart';
 import 'package:project_management/comman_widget/property_card.dart';
-import 'package:project_management/room_module/model/property_model.dart';
 
 class FilteredPropertiesScreen extends StatelessWidget {
   final String filterType;
@@ -16,8 +15,14 @@ class FilteredPropertiesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: lightestYellow,
+
       appBar: AppBar(
-        title: '$filterType Properties'.text.make(),
+        backgroundColor: lightYellow,
+        iconTheme: IconThemeData(
+            color: orange
+        ),
+        title: '$filterType Properties'.text.color(orange).make(),
       ),
       body: filteredProperties.isEmpty
           ? Center(
