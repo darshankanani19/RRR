@@ -18,6 +18,7 @@ class _HomeScreenRoomState extends State<HomeScreenRoom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: lightestYellow, // Applying background color to Scaffold
       body: SingleChildScrollView(
         physics:

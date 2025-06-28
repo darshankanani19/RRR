@@ -14,6 +14,8 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       backgroundColor: lightestYellow,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+
         backgroundColor: lightYellow,
         title: "Search".text.color(orange).make(),
       ),

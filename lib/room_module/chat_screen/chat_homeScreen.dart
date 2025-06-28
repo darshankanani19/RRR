@@ -16,6 +16,8 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
     return Scaffold(
       backgroundColor: lightestYellow,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+
         backgroundColor: lightYellow,
         iconTheme: IconThemeData(
             color: orange

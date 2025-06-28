@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     currentValueIndex = widget.currentValueIndex;
-    selectedApp = appList[0];
+    selectedApp = appList[1];
   }
 
   @override
@@ -41,6 +41,8 @@ class _HomeState extends State<Home> {
       extendBody: true,
       appBar: showAppBar
           ? AppBar(
+        automaticallyImplyLeading: false,
+
         iconTheme: IconThemeData(
           color: selectedApp == appList[0]? orange :selectedApp == appList[1]?Purple:lightPurple,
         ),
