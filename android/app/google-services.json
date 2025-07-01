@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "265539119943",
+    "project_id": "rrr-project-b21e2",
+    "storage_bucket": "rrr-project-b21e2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265539119943:android:7f009974a6fd2efffcfa62",
+        "android_client_info": {
+          "package_name": "com.example.project_management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNawwWrw2MFRQFSX236gXfzuQy4xzVMn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
